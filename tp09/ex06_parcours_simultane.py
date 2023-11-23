@@ -20,7 +20,14 @@ def est_vide(liste):
 
 # EXERCICE
 def sont_opposees(liste1,liste2):
-  ...
+  if est_vide(liste1) and est_vide(liste2):
+    return True
+  if est_vide(liste1) != est_vide(liste2):
+    return False
+  
+  if tete(liste1) != -tete(liste2):
+    return False
+  return sont_opposees(queue(liste1), queue(liste2))
 
 def test_sont_opposees():
   print('Test de la fonction sont_opposees')

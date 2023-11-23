@@ -20,7 +20,14 @@ def est_vide(liste):
 
 # EXERCICE
 def extraire_negatifs_positifs(liste):
-  ...
+  if est_vide(liste):
+    return creer_liste_vide(), creer_liste_vide()
+  n, p = extraire_negatifs_positifs(queue(liste))
+  t = tete(liste)
+  if t < 0:
+    return creer_liste(t, n), p
+  else:
+    return n, creer_liste(t, p)
   
 def test_extraire_negatifs_positifs():
   print('Test de la fonction extraire_negatifs_positifs')

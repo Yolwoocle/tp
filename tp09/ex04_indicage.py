@@ -21,7 +21,9 @@ def est_vide(liste):
 # EXERCICE
 def lire_element(liste,i):
   assert i>=0 and not est_vide(liste), 'Pré-condition'
-  ...
+  if i == 0:
+    return tete(liste)
+  return lire_element(queue(liste), i-1)
 
 def test_lire_element():
   print('Test de la fonction lire_element')
@@ -35,7 +37,10 @@ def test_lire_element():
 
 def ecrire_element(liste,i,valeur):
   assert i>=0 and not est_vide(liste), 'Pré-condition'
-  ...
+  if i == 0:
+    return creer_liste(valeur, queue(liste))
+  q = ecrire_element(queue(liste), i-1, valeur)
+  return creer_liste(tete(liste), q)
 
 def test_ecrire_element():
   print('Test de la fonction ecrire_element')

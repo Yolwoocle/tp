@@ -20,7 +20,18 @@ def est_vide(liste):
 
 # EXERCICE
 def fusionner_listes_triees(liste1,liste2):
-  ...
+  if est_vide(liste1):
+    return liste2
+  if est_vide(liste2):
+    return liste1
+  
+  t1, t2 = tete(liste1), tete(liste2)
+  if t1 < t2:
+    fli = fusionner_listes_triees(queue(liste1), liste2)
+    return creer_liste(t1, fli)
+  else:
+    fli = fusionner_listes_triees(liste1, queue(liste2))
+    return creer_liste(t2, fli)
 
 def test_fusionner_listes_triees():
   print('Test de la fonction fusionner_listes_triees')

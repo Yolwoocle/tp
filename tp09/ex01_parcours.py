@@ -20,7 +20,9 @@ def est_vide(liste):
 
 # EXERCICE
 def longueur(liste):
-  ...
+  if est_vide(liste):
+    return 0
+  return 1 + longueur(queue(liste))
 
 def test_longueur():
   print('Test de la fonction longueur')
@@ -30,7 +32,9 @@ def test_longueur():
   print('  OK')
 
 def somme(liste):
-  ...
+  if est_vide(liste):
+    return 0
+  return tete(liste) + somme(queue(liste))
 
 def test_somme():
   print('Test de la fonction somme')
@@ -40,7 +44,9 @@ def test_somme():
   print('  OK')
 
 def convertir_en_chaine(liste):
-  ...
+  if est_vide(liste):
+    return ""
+  return str(tete(liste)) + " " + convertir_en_chaine(queue(liste))
 
 def test_convertir_en_chaine():
   print('Test de la fonction convertir_en_chaine')

@@ -20,7 +20,12 @@ def est_vide(liste):
 
 # EXERCICE
 def inserer_dans_liste_triee(liste,valeur):
-  ...
+  if est_vide(liste):
+    return creer_liste(valeur, creer_liste_vide())
+  if tete(liste) >= valeur:
+    return creer_liste(valeur, liste)
+  return creer_liste(tete(liste), inserer_dans_liste_triee(queue(liste), valeur))
+
 
 def test_inserer_dans_liste_triee():
   print('Test de la fonction inserer_dans_liste_triee')

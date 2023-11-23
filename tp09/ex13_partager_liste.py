@@ -20,7 +20,15 @@ def est_vide(liste):
 
 # EXERCICE
 def partager_liste(liste):
-    ...
+    def aux(liste, i):
+        if est_vide(liste):
+            return creer_liste_vide(), creer_liste_vide()
+        a, b = aux(queue(liste), (i+1)%2)
+        if i == 0:
+            return creer_liste(tete(liste), a), b
+        else: 
+            return a, creer_liste(tete(liste), b)
+    return aux(liste, 0)
 
 def test_partager_liste():
     print('Test de la fonction partager_liste')

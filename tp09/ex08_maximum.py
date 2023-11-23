@@ -19,9 +19,19 @@ def est_vide(liste):
   return liste==None
 
 # EXERCICE
+def est_singleton(liste):
+  return est_vide(queue(liste))
+
 def maximum(liste):
   assert not est_vide(liste), 'Pré-condition'
-  ...
+  if est_singleton(liste):
+    return tete(liste)
+  
+  m = maximum(queue(liste))
+  if m > tete(liste):
+    return m
+  else:
+    return tete(liste)
 
 def test_maximum():
   print('Test de la fonction maximum')

@@ -20,7 +20,15 @@ def est_vide(liste):
 
 # EXERCICE
 def rechercher_premier_indice(liste,valeur):
-  ...
+  def aux(liste, i):
+    if est_vide(liste):
+      return -1
+    if tete(liste) == valeur:
+      return i
+    return aux(queue(liste), i+1)
+  return aux(liste, 0)
+  
+  
 
 def test_rechercher_premier_indice():
   print('Test de la fonction rechercher_premier_indice')
@@ -33,7 +41,13 @@ def test_rechercher_premier_indice():
   print('  OK')
 
 def rechercher_indices_rec(liste,valeur,indice):
-  ...
+  if est_vide(liste):
+    return creer_liste_vide()
+  
+  q = rechercher_indices_rec(queue(liste), valeur, indice+1)
+  if tete(liste) == valeur:
+    return creer_liste(indice, q)
+  return q
 
 def test_rechercher_indices_rec():
   print('Test de la fonction rechercher_indices_rec')
@@ -45,7 +59,7 @@ def test_rechercher_indices_rec():
   print('  OK')
 
 def rechercher_indices(liste,valeur):
-  ...
+  return rechercher_indices_rec(liste, valeur, 0)
 
 def test_rechercher_indices():
   print('Test de la fonction rechercher_indices')

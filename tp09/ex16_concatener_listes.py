@@ -20,7 +20,11 @@ def est_vide(liste):
 
 # EXERCICE
 def concatener_listes(liste1,liste2):
-  ...
+  if est_vide(liste1):
+    return liste2
+  
+  li = concatener_listes(queue(liste1), liste2)
+  return creer_liste(tete(liste1), li)
   
 def test_concatener_listes():
   print('Test de la fonction concatener_listes')

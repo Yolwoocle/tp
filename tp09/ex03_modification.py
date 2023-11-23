@@ -20,7 +20,9 @@ def est_vide(liste):
 
 # EXERCICE
 def multiplier(liste,facteur):
-  ...
+  if est_vide(liste):
+    return creer_liste_vide()
+  return creer_liste(tete(liste) * facteur, multiplier(queue(liste), facteur))
 
 def test_multiplier():
   print('Test de la fonction multiplier')

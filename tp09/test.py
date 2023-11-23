@@ -1,0 +1,16 @@
+import ex01_parcours
+import ex02_creation
+import ex03_modification
+import ex04_indicage
+import ex05_ajout_suppression
+import ex06_parcours_simultane
+import ex07_extraire_negatifs_positifs
+import ex08_maximum
+import ex09_inversion
+import ex10_recherche
+import ex11_inserer_dans_liste_triee
+import ex12_extraire_minimum
+import ex13_partager_liste
+import ex14_fusionner_listes_triees
+import ex15_partitionner_pivot
+import ex16_concatener_listes

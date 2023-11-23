@@ -20,7 +20,9 @@ def est_vide(liste):
 
 # EXERCICE
 def ajouter_element_fin(liste,valeur):
-  ...
+  if est_vide(liste):
+    return creer_liste(valeur, creer_liste_vide())
+  return creer_liste(tete(liste), ajouter_element_fin(queue(liste), valeur))
 
 def test_ajouter_element_fin():
   print('Test de la fonction ajouter_element_fin')
@@ -31,7 +33,9 @@ def test_ajouter_element_fin():
 
 def inserer_element(liste,i,valeur):
   assert i==0 or (i>0 and not est_vide(liste)), 'Pré-condition'
-  ...
+  if i == 0:
+    return creer_liste(valeur, liste)
+  return creer_liste(tete(liste), inserer_element(queue(liste), i-1, valeur))
 
 def test_inserer_element():
   print('Test de la fonction inserer_element')
@@ -43,7 +47,9 @@ def test_inserer_element():
 
 def supprimer_element(liste,i):
   assert i>=0 and not est_vide(liste), 'Pré-condition'
-  ...
+  if i == 0:
+    return queue(liste)
+  return creer_liste(tete(liste), supprimer_element(queue(liste), i-1))
 
 def test_supprimer_element():
   print('Test de la fonction supprimer_element')

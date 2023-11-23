@@ -20,7 +20,9 @@ def est_vide(liste):
 
 # EXERCICE
 def inverser_rec(liste,liste_inverse):
-  ...
+  if est_vide(liste):
+    return liste_inverse
+  return inverser_rec(queue(liste), creer_liste(tete(liste), liste_inverse))
 
 def test_inverser_rec():
   print('Test de la fonction inverser_rec')
@@ -34,7 +36,7 @@ def test_inverser_rec():
   print('  OK')
 
 def inverser(liste):
-  ...
+  return inverser_rec(liste, creer_liste_vide())
 
 def test_inverser():
   print('Test de la fonction inverser')
