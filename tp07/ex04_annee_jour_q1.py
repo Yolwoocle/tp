@@ -4,6 +4,8 @@ def est_bissextile(annee):
 def calculer_annee_jour(jours):
   annee = 1980
   while jours>365:
+    v_debut = jours
+    assert v_debut >= 0, "Invariant (positif)"
     if est_bissextile(annee):
       if jours > 366:
         jours -= 366
@@ -11,6 +13,8 @@ def calculer_annee_jour(jours):
     else:
       jours -= 365
       annee += 1
+    v_fin = jours
+    assert v_fin < v_debut, "Invariant (décroissant)"
   return annee,jours
 
 def test_calculer_annee_jour():

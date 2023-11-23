@@ -2,7 +2,7 @@ def est_bissextile(annee):
   return annee%4==0 and annee%100!=0 or annee%400==0
 
 def nb_jours_annee(annee):
-  ...
+  return 366 if est_bissextile(annee) else 365
 
 def test_nb_jours_annee():
   print('Test de la fonction nb_jours_annee')
@@ -13,7 +13,11 @@ def test_nb_jours_annee():
   print('  OK')
 
 def calculer_annee_jour(jours):
-  ...
+  annee = 1980
+  while jours > nb_jours_annee(annee):
+    jours -= nb_jours_annee(annee)
+    annee += 1
+  return annee, jours
 
 def test_calculer_annee_jour():
   print('Test de la fonction calculer_annee_jour')

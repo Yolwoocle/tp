@@ -1,7 +1,9 @@
 # Q1
 
 def permuter(tab,i,j):
-  ...
+  aux = tab[i]
+  tab[i] = tab[j]
+  tab[j] = aux
 
 def test_permuter():
   print('Test de la fonction permuter')
@@ -14,7 +16,10 @@ def test_permuter():
   print('  OK')
 
 def est_infegal(tab,g,d,m):
-  ...
+  for i in range(g, d):
+    if tab[i] > m:
+      return False
+  return True
 
 def test_est_infegal():
   print('Test de la fonction est_infegal')
@@ -28,7 +33,10 @@ def test_est_infegal():
   print('  OK')
 
 def est_inf(tab,g,d,m):
-  ...
+  for i in range(g, d):
+    if tab[i] >= m:
+      return False
+  return True
 
 def test_est_inf():
   print('Test de la fonction est_inf')
@@ -42,7 +50,10 @@ def test_est_inf():
   print('  OK')
 
 def est_supegal(tab,g,d,m):
-  ...
+  for i in range(g, d):
+    if tab[i] < m:
+      return False
+  return True
 
 def test_est_supegal():
   print('Test de la fonction est_supegal')
@@ -56,7 +67,10 @@ def test_est_supegal():
   print('  OK')
 
 def est_sup(tab,g,d,m):
-  ...
+  for i in range(g, d):
+    if tab[i] <= m:
+      return False
+  return True
 
 def test_est_sup():
   print('Test de la fonction est_sup')
@@ -70,7 +84,10 @@ def test_est_sup():
   print('  OK')
 
 def est_egal(tab,g,d,m):
-  ...
+  for i in range(g, d):
+    if tab[i] != m:
+      return False
+  return True
 
 def test_est_egal():
   print('Test de la fonction est_egal')
